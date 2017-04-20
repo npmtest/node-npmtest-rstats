@@ -1,1 +1,39 @@
-{     "devDependencies": {         "electron-lite": "kaizhu256/node-electron-lite#alpha",         "utility2": "kaizhu256/node-utility2#alpha"     },     "name":"npmtest-rstats",     "homepage": "https://github.com/npmtest/node-npmtest-rstats",     "repository": {         "type": "git",         "url": "https://github.com/npmtest/node-npmtest-rstats.git"     },     "scripts": {         "build-ci": "utility2 shReadmeTest build_ci.sh"     },     "version": "0.0.1" }
+{
+    "author": "kai zhu <kaizhu256@gmail.com>",
+    "description": "#### basic test coverage for  [rstats (v0.3.1)](https://github.com/Planeshifter/node-Rstats)  [![npm package](https://img.shields.io/npm/v/npmtest-rstats.svg?style=flat-square)](https://www.npmjs.org/package/npmtest-rstats) [![travis-ci.org build-status](https://api.travis-ci.org/npmtest/node-npmtest-rstats.svg)](https://travis-ci.org/npmtest/node-npmtest-rstats)",
+    "devDependencies": {
+        "electron-lite": "kaizhu256/node-electron-lite#alpha",
+        "utility2": "kaizhu256/node-utility2#alpha"
+    },
+    "engines": {
+        "node": ">=4.0"
+    },
+    "homepage": "https://github.com/npmtest/node-npmtest-rstats",
+    "keywords": [
+        "coverage",
+        "test",
+        "rstats"
+    ],
+    "license": "MIT",
+    "main": "lib.npmtest_rstats.js",
+    "name": "npmtest-rstats",
+    "nameAlias": "npmtest_rstats",
+    "nameOriginal": "npmtest-rstats",
+    "os": [
+        "darwin",
+        "linux"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/npmtest/node-npmtest-rstats.git"
+    },
+    "scripts": {
+        "build-ci": "utility2 shReadmeTest build_ci.sh",
+        "env": "env",
+        "heroku-postbuild": "npm install \"kaizhu256/node-utility2#alpha\" && utility2 shDeployHeroku",
+        "postinstall": "[ ! -f npm_scripts.sh ] || ./npm_scripts.sh postinstall",
+        "start": "PORT=${PORT:-8080} utility2 start test.js",
+        "test": "(set -e; export PORT=$(utility2 shServerPortRandom); utility2 test test.js)"
+    },
+    "version": "0.0.1"
+}
